@@ -1,0 +1,21 @@
+{
+  "name": "workSpace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ejs-electron": "^2.0.3",
+    "electron": "^9.3.1"
+  },
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "jquery": "^3.5.1"
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title><%=title%></title>
+    
+</head>
+
+<body>
+    <!-- .menu+.menu-options+(.formulaBar>(input[type="text"])*2) 
+        +.cell-container+.sheets -->
+    
+
+    <div class="menu-option-container">
+        <div class="menu-options" id="File-menu-options">
+            <button id="New">New</button>
+            <button id="Open">Open</button>
+            <button id="Save">Save</button>
+        </div>
+        <div class="menu-options" id="Home-menu-options">
+            <div class="menu-group">
+                <select name="" id="font-family">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Charcoal">Charcoal</option>
+                    <option value="Monospace">Monospace</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                </select>
+
+                <select name="" id="font-size">
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14" selected>14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="22">22</option>
+                </select>
+            </div>
+            
+            <div class="menu-group">
+                <label for="bg-color"><small>Bg Color</small></label>
+                <input type="color" id="bg-color" value="#ffffff">
+                <br>
+                <label for="text-color"><small>Text Color</small></label>
+                <input type="color" id="text-color" value="#000000">
+            </div>
+            <div class="menu-group">
+                <label for="bold">Style</label>
+                <input type="button" id="bold" value="B">
+                <input type="button" id="underline" value="U">
+                <input type="button" id="italic" value="I">
+            </div>
+            <div class="menu-group">
+                <label for="lAlign">Alignment</label>
+                <input type="button" id="lAlign" value="L" halign="left" class="isOn">
+                <input type="button" id="cAlign" value="C" halign="center">
+                <input type="button" id="rAlign" value="R" halign="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="formulaBar">
+        Cell
+        <input type="text" contenteditable="false" id="address-input" class="address-container">
+        Formula
+        <input type="text" id="formula-input" class="formula-container">
+    </div>
+    <div class="content-container">
+        <div id="top-left-cell">
+        </div>
+        <div id="top-row">
+            <%for(let i=0; i<cols; i++){%>
+                <div class="cell">
+                    <%= String.fromCharCode(i+65)%>
+                </div>
+            <%}%>
+        </div>
+        <div id="left-col">
+            <%for(let j=1; j<=rows; j++){%>
+                <div class="cell">
+                    <%= j%>
+                </div>
+            <%}%>
+        </div>
+        <div id="grid">
+            <%for(let i = 0; i<rows; i++) {%>
+                <div class="row">
+                    <%for(let j = 0; j<cols; j++) {%>
+                        <div contenteditable="true" class="cell" rId=<%=i%> cId=<%=j%>>
+                        </div>
+                    <%}%>
+                </div>
+            <%}%>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
