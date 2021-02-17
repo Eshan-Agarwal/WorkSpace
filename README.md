@@ -1,5 +1,5 @@
-# Sheets
-Sheets is a desktop application based on Electron frame work similar to MS-EXCEL. It contains following features.
+# WorkSpace
+WorkSpace is a desktop application based on Electron frame work similar to MS-EXCEL. It contains following features.
 
 1) Feature to create new, open and save file. (in json format)
 2) Page can be scrolled, just like in Ms-Excel.
